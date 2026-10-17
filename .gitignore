@@ -1,0 +1,69 @@
+# SBM TECH - Git Ignore
+
+# Dependencies
+node_modules/
+.bower-cache
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Testing
+coverage/
+.nyc_output/
+
+# Production
+/public/
+
+# Misc
+*.bak
+*.tmp
+*.backup
+*.orig
+
+# Images optimization
+assets/images/*
+!assets/images/.gitkeep
+
+# Local overrides
+local.css
+custom.css

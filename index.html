@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SBM TECH - Desarrollo de software profesional, sistemas SaaS, landing pages y automatización con IA en Huancayo, Perú">
+    <meta name="keywords" content="desarrollo software, SaaS, landing pages, automatización IA, Huancayo, Perú, Joseph Eduardo Huatuco Buendia">
+    <meta name="author" content="SBM TECH">
+    <title>SBM TECH | Software & Business Management Technologies</title>
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="SBM TECH - Software & Business Management Technologies">
+    <meta property="og:description" content="Desarrollo de software profesional, sistemas SaaS y automatización con IA desde Huancayo, Perú">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sbmtech.pe">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=630&fit=crop">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">
+                    <span class="logo-icon"><i class="fas fa-code"></i></span>
+                    <span class="logo-text">SBM<span class="accent">TECH</span></span>
+                </a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link">Inicio</a></li>
+                    <li><a href="#services" class="nav-link">Servicios</a></li>
+                    <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                    <li><a href="#about" class="nav-link">Sobre Nosotros</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="#contact" class="btn btn-primary btn-sm">
+                        <i class="fas fa-paper-plane"></i> Hablemos
+                    </a>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="hero-bg-image" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&h=1080&fit=crop');"></div>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Disponible para nuevos proyectos</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Transformamos <span class="accent">ideas</span> en 
+                    <span class="typing-text"></span>
+                </h1>
+                
+                <p class="hero-description">
+                    Desarrollo de software profesional, sistemas SaaS y automatización con IA 
+                    para impulsar tu negocio al siguiente nivel.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-folder-open"></i> Ver Proyectos
+                    </a>
+                    <a href="#contact" class="btn btn-ghost">
+                        <i class="fas fa-calendar-alt"></i> Agendar Reunión
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Clientes Satisfechos</span>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-target="30">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Proyectos Completados</span>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label">Años de Experiencia</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img 
+                        src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" 
+                        alt="Desarrollo de Software" 
+                        class="hero-image" 
+                        loading="lazy"
+                    >
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Desliza para explorar</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        
+        <!-- Company Logos (Trust indicators) -->
+        <div class="trust-indicators">
+            <div class="container">
+                <div class="trust-text">Confían en nosotros:</div>
+                <div class="logos-scroll">
+                    <div class="logo-item"><img src="https://via.placeholder.com/120x40/ffffff/000000?text=GMSchool" alt="GMSchool" loading="lazy"></div>
+                    <div class="logo-item"><img src="https://via.placeholder.com/120x40/ffffff/000000?text=Taller+Buendia" alt="Taller Buendía" loading="lazy"></div>
+                    <div class="logo-item"><img src="https://via.placeholder.com/120x40/ffffff/000000?text=UC" alt="Universidad Continental" loading="lazy"></div>
+                    <div class="logo-item"><img src="https://via.placeholder.com/120x40/ffffff/000000?text=SBM+TECH" alt="SBM TECH" loading="lazy"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag"><i class="fas fa-cog"></i> Servicios</span>
+                <h2 class="section-title">
+                    Soluciones de <span class="accent">Software</span> 
+                    <span class="section-highlight">Profesionales</span>
+                </h2>
+                <p class="section-description">
+                    Ofrecemos servicios de desarrollo de software personalizados 
+                    para satisfacer las necesidades únicas de tu negocio.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 - SaaS -->
+                <div class="service-card glass-card reveal">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=80&h=80&fit=crop" alt="SaaS" loading="lazy">
+                    </div>
+                    <h3 class="service-title">Sistemas SaaS</h3>
+                    <p class="service-description">
+                        Plataformas escalables en la nube con arquitectura moderna 
+                        y soporte multi-usuario para tu negocio.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Arquitectura escalable</li>
+                        <li><i class="fas fa-check"></i> Multi-tenancy</li>
+                        <li><i class="fas fa-check"></i> Integración API</li>
+                        <li><i class="fas fa-check"></i> Soporte 24/7</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Solicitar Cotización <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 2 - Custom Software -->
+                <div class="service-card glass-card reveal">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=80&h=80&fit=crop" alt="Software a Medida" loading="lazy">
+                    </div>
+                    <h3 class="service-title">Software a Medida</h3>
+                    <p class="service-description">
+                        Soluciones personalizadas que se adaptan exactamente a tus 
+                        procesos y flujos de trabajo empresariales.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Análisis de requisitos</li>
+                        <li><i class="fas fa-check"></i> Desarrollo ágil</li>
+                        <li><i class="fas fa-check"></i> Pruebas exhaustivas</li>
+                        <li><i class="fas fa-check"></i> Implementación</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Solicitar Cotización <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 3 - Landing Pages -->
+                <div class="service-card glass-card reveal">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=80&h=80&fit=crop" alt="Landing Pages" loading="lazy">
+                    </div>
+                    <h3 class="service-title">Landing Pages</h3>
+                    <p class="service-description">
+                        Páginas de aterrizaje optimizadas para conversión con 
+                        diseño premium y máximo rendimiento.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Diseño responsivo</li>
+                        <li><i class="fas fa-check"></i> SEO optimizado</li>
+                        <li><i class="fas fa-check"></i> Carga rápida</li>
+                        <li><i class="fas fa-check"></i> Integración CRM</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Solicitar Cotización <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 4 - AI Automation -->
+                <div class="service-card glass-card reveal">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=80&h=80&fit=crop" alt="Automatización con IA" loading="lazy">
+                    </div>
+                    <h3 class="service-title">Automatización con IA</h3>
+                    <p class="service-description">
+                        Integra inteligencia artificial en tus flujos de trabajo para 
+                        ahorrar tiempo, reducir costos y aumentar la productividad.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Chatbots inteligentes</li>
+                        <li><i class="fas fa-check"></i> Procesamiento de datos</li>
+                        <li><i class="fas fa-check"></i> Automatización RPA</li>
+                        <li><i class="fas fa-check"></i> Machine Learning</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Solicitar Cotización <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag"><i class="fas fa-folder-open"></i> Portfolio</span>
+                <h2 class="section-title">
+                    Proyectos <span class="accent">Destacados</span>
+                </h2>
+                <p class="section-description">
+                    Conoce algunos de nuestros proyectos más recientes y exitosos que 
+                    demuestran nuestra capacidad y experiencia.
+                </p>
+            </div>
+            
+            <div class="projects-filter reveal">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="desktop">Desktop</button>
+                <button class="filter-btn" data-filter="iot">IoT</button>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 - GMSchool -->
+                <div class="project-card glass-card reveal" data-category="web">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=250&fit=crop" alt="GMSchool" loading="lazy">
+                        <div class="project-badge">Educación</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">GMSchool</h3>
+                        <p class="project-description">
+                            Plataforma de gestión académica completa para instituciones educativas, 
+                            digitalizando procesos administrativos y académicos.
+                        </p>
+                        <div class="project-meta">
+                            <div class="tech-tags">
+                                <span class="tech-tag"><i class="fas fa-globe"></i> Web</span>
+                                <span class="tech-tag"><i class="fas fa-database"></i> MySQL</span>
+                                <span class="tech-tag"><i class="fas fa-code"></i> PHP</span>
+                            </div>
+                        </div>
+                        <a href="https://gmschool.pe/" target="_blank" class="project-link">
+                            Visitar Sitio <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 - Taller Buendía -->
+                <div class="project-card glass-card reveal" data-category="desktop">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Sistema de Ventas - Taller Buendía" loading="lazy">
+                        <div class="project-badge">Negocio Local</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Ventas – Taller Buendía</h3>
+                        <p class="project-description">
+                            Aplicación de escritorio para control completo de ventas, clientes, 
+                            contratos e inventario, digitalizando la operación diaria.
+                        </p>
+                        <div class="project-meta">
+                            <div class="tech-tags">
+                                <span class="tech-tag"><i class="fas fa-coffee"></i> Java Swing</span>
+                                <span class="tech-tag"><i class="fas fa-database"></i> Access DB</span>
+                                <span class="tech-tag"><i class="fas fa-plus"></i> CRUD</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="project-link">
+                            Solicitar Demo <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 - C++ Inventory -->
+                <div class="project-card glass-card reveal" data-category="desktop">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=400&h=250&fit=crop" alt="Sistema de Inventario en C++" loading="lazy">
+                        <div class="project-badge">Estructuras de Datos</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Inventario en C++</h3>
+                        <p class="project-description">
+                            Implementación de listas enlazadas para gestión de inventario con 
+                            operaciones CRUD, búsqueda y ordenamiento eficiente.
+                        </p>
+                        <div class="project-meta">
+                            <div class="tech-tags">
+                                <span class="tech-tag"><i class="fas fa-code"></i> C++</span>
+                                <span class="tech-tag"><i class="fas fa-link"></i> Listas Enlazadas</span>
+                                <span class="tech-tag"><i class="fas fa-calculator"></i> Algoritmos</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="project-link">
+                            Ver Código <i class="fas fa-code"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 - Arduino Incubator -->
+                <div class="project-card glass-card reveal" data-category="iot">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=400&h=250&fit=crop" alt="Incubadora Automatizada con Arduino" loading="lazy">
+                        <div class="project-badge">Automatización</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Incubadora Automatizada con Arduino</h3>
+                        <p class="project-description">
+                            Sistema de control de temperatura y humedad con sensor DHT11 para 
+                            automatización de calefacción en incubación de precisión.
+                        </p>
+                        <div class="project-meta">
+                            <div class="tech-tags">
+                                <span class="tech-tag"><i class="fas fa-microchip"></i> Arduino</span>
+                                <span class="tech-tag"><i class="fas fa-thermometer-half"></i> DHT11</span>
+                                <span class="tech-tag"><i class="fas fa-cogs"></i> IoT</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="project-link">
+                            Solicitar Información <i class="fas fa-info-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-cta text-center">
+                <a href="#contact" class="btn btn-primary btn-lg">
+                    <i class="fas fa-plus"></i> ¿Tienes un proyecto en mente?
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <div class="glass-card about-card">
+                        <div class="avatar-container">
+                            <img 
+                                src="assets/images/hero/Perfil.jpeg" 
+                                alt="Joseph Eduardo Huatuco Buendia" 
+                                class="avatar-image" 
+                                loading="lazy"
+                            >
+                            <div class="avatar-status online"></div>
+                        </div>
+                        <h3 class="avatar-name">Joseph Eduardo</h3>
+                        <p class="avatar-title">Fundador & Desarrollador</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/joseph-eduardo-huatuco-buendia-36737b399" 
+                               target="_blank" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/softandbusinessmanagement" 
+                               target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/51973012326" target="_blank" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:sbm.tech.eirl@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-content reveal">
+                    <span class="section-tag"><i class="fas fa-user-tie"></i> Sobre Nosotros</span>
+                    <h2 class="section-title">
+                        Detrás de <span class="accent">SBM TECH</span>
+                    </h2>
+                    
+                    <p class="about-text">
+                        Soy <strong>Joseph Eduardo Huatuco Buendia</strong>, estudiante de 
+                        Ingeniería de Sistemas e Informática en la Universidad Continental y 
+                        fundador de SBM TECH.
+                    </p>
+                    
+                    <p class="about-text">
+                        Con experiencia en desarrollo Java, C++, bases de datos SQL Server y 
+                        tecnologías modernas, me especializo en crear soluciones de software 
+                        que resuelven problemas reales y agregan valor a los negocios.
+                    </p>
+                    
+                    <p class="about-text">
+                        Mi objetivo es <strong>transformar ideas en software funcional</strong> que 
+                        impulse el crecimiento y la eficiencia de tus proyectos.
+                    </p>
+                    
+                    <div class="about-skills">
+                        <h4><i class="fas fa-rocket"></i> Habilidades Clave</h4>
+                        <ul class="skills-list">
+                            <li><i class="fas fa-check-circle"></i> Desarrollo en Java, C++ y bases de datos SQL Server</li>
+                            <li><i class="fas fa-check-circle"></i> Programación orientada a objetos y estructuras de datos</li>
+                            <li><i class="fas fa-check-circle"></i> Automatización de procesos e integración con IA</li>
+                            <li><i class="fas fa-check-circle"></i> Experiencia en proyectos académicos y reales</li>
+                            <li><i class="fas fa-check-circle"></i> Arquitectura de software y diseño de sistemas</li>
+                            <li><i class="fas fa-check-circle"></i> Desarrollo web con tecnologías modernas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-cta">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-download"></i> Descargar CV
+                        </a>
+                        <a href="#contact" class="btn btn-ghost">
+                            <i class="fas fa-calendar-alt"></i> Agendar Reunión
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag"><i class="fas fa-quote-left"></i> Testimonios</span>
+                <h2 class="section-title">
+                    Lo que dicen nuestros <span class="accent">Clientes</span>
+                </h2>
+                <p class="section-description">
+                    La satisfacción de nuestros clientes es nuestro mayor logro.
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card reveal">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>SBM TECH transformó completamente nuestra gestión académica. La plataforma es intuitiva, robusta y ha optimizado nuestros procesos al 100%.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Cliente" loading="lazy">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Director de Institución</h4>
+                            <p>GMSchool</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card glass-card reveal">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>El sistema de ventas que desarrollaron para nuestro taller es exactamente lo que necesitábamos. Rápido, confiable y fácil de usar.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop&crop=face" alt="Cliente" loading="lazy">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Dueño de Negocio</h4>
+                            <p>Taller Buendía</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card glass-card reveal">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>Trabajar con Joseph fue una gran experiencia. Entendió rápidamente nuestras necesidades y entregó una solución que superó nuestras expectativas.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Cliente" loading="lazy">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Empresario</h4>
+                            <p>Cliente Satisfecho</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <span class="section-tag"><i class="fas fa-envelope-open"></i> Contáctanos</span>
+                    <h2 class="section-title">
+                        ¿Listo para <span class="accent">Digitalizar</span> 
+                        tu Negocio?
+                    </h2>
+                    
+                    <p class="contact-description">
+                        Cuéntame tu idea o necesidad. Te responderé en menos de 24 horas 
+                        con una propuesta clara y sin compromiso.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item reveal">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-content">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:sbm.tech.eirl@gmail.com" class="contact-value">
+                                    sbm.tech.eirl@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item reveal">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-content">
+                                <span class="contact-label">Teléfono / WhatsApp</span>
+                                <a href="https://wa.me/51973012326" target="_blank" class="contact-value">
+                                    +51 973 012 326
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item reveal">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-content">
+                                <span class="contact-label">Ubicación</span>
+                                <span class="contact-value">Huancayo, Junín, Perú</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item reveal">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-content">
+                                <span class="contact-label">Horario</span>
+                                <span class="contact-value">Lun - Dom: 8:00 AM - 10:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links-contact">
+                        <a href="https://www.linkedin.com/in/joseph-eduardo-huatuco-buendia-36737b399" 
+                           target="_blank" class="social-link-large">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/softandbusinessmanagement" 
+                           target="_blank" class="social-link-large">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/51973012326" target="_blank" class="social-link-large">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:sbm.tech.eirl@gmail.com" class="social-link-large">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container reveal">
+                    <div class="glass-card contact-form-card">
+                        <h3 class="form-title">
+                            <i class="fas fa-paper-plane"></i> Envíanos un Mensaje
+                        </h3>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="nombre" class="form-label">Nombre Completo</label>
+                                    <input type="text" id="nombre" name="nombre" 
+                                           class="form-input" placeholder="Ej: Juan Pérez" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" name="email" 
+                                           class="form-input" placeholder="Ej: juan@email.com" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Teléfono (Opcional)</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="form-input" placeholder="Ej: +51 987 654 321">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Asunto</label>
+                                <select id="subject" name="subject" class="form-input form-select" required>
+                                    <option value="" disabled selected>Selecciona un asunto</option>
+                                    <option value="cotizacion">Solicitar Cotización</option>
+                                    <option value="consulta">Consulta General</option>
+                                    <option value="soporte">Soporte Técnico</option>
+                                    <option value="colaboracion">Colaboración</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" class="form-input form-textarea" 
+                                          placeholder="Cuéntame sobre tu proyecto..." rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-icon"><i class="fas fa-code"></i></span>
+                        <span class="logo-text">SBM<span class="accent">TECH</span></span>
+                    </a>
+                    <p class="footer-description">
+                        Software y Business Management Technologies. 
+                        Desarrollo de software a medida, SaaS y automatización con IA 
+                        desde Huancayo, Perú.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/joseph-eduardo-huatuco-buendia-36737b399" 
+                           target="_blank" class="footer-social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/softandbusinessmanagement" 
+                           target="_blank" class="footer-social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/51973012326" target="_blank" class="footer-social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:sbm.tech.eirl@gmail.com" class="footer-social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services"><i class="fas fa-cloud"></i> Sistemas SaaS</a></li>
+                        <li><a href="#services"><i class="fas fa-code"></i> Software a Medida</a></li>
+                        <li><a href="#services"><i class="fas fa-rocket"></i> Landing Pages</a></li>
+                        <li><a href="#services"><i class="fas fa-robot"></i> Automatización con IA</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#projects">Proyectos</a></li>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Contacto</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="mailto:sbm.tech.eirl@gmail.com">
+                                <i class="fas fa-envelope"></i> sbm.tech.eirl@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/51973012326" target="_blank">
+                                <i class="fas fa-phone-alt"></i> +51 973 012 326
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact">
+                                <i class="fas fa-map-marker-alt"></i> Huancayo, Perú
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2026 SBM TECH - Software y Business Management Technologies. 
+                    Todos los derechos reservados.
+                </p>
+                <p class="footer-credit">
+                    Hecho con <i class="fas fa-heart"></i> en Huancayo, Perú 🇵🇪
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/51973012326?text=Hola%20SBM%20TECH%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios" 
+       target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Volver al inicio">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Notification Container -->
+    <div class="notification-container"></div>
+
+    <!-- Scripts -->
+    <script src="assets/js/images.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/typing.js"></script>
+    <script src="assets/js/counter.js"></script>
+    <script src="assets/js/form.js"></script>
+</body>
+</html>
