@@ -1273,6 +1273,31 @@
     position: relative;
 }
 
+/* Character Counter */
+.char-counter {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+.char-counter .char-used {
+    font-weight: 600;
+}
+
+.char-counter.warning {
+    color: var(--warning);
+}
+
+.char-counter.danger {
+    color: var(--danger);
+}
+
+.char-separator {
+    margin: 0 0.25rem;
+}
+
 .form-label {
     position: absolute;
     top: 0.875rem;

@@ -527,6 +527,52 @@ function checkRateLimit(maxAttempts = 5, timeWindow = 60000) {
     return true;
 }
 
+// ========== CHARACTER COUNTER ==========
+function initCharacterCounters() {
+    const counters = document.querySelectorAll('.char-counter');
+    
+    counters.forEach(counter => {
+        const targetId = counter.getAttribute('data-target');
+        const input = document.getElementById(targetId);
+        
+        if (!input) return;
+        
+        const max = parseInt(input.getAttribute('maxlength')) || 1000;
+        const usedSpan = counter.querySelector('.char-used');
+        const maxSpan = counter.querySelector('.char-max');
+        
+        if (maxSpan) maxSpan.textContent = max;
+        
+        // Update counter on input
+        input.addEventListener('input', function() {
+            const used = this.value.length;
+            if (usedSpan) usedSpan.textContent = used;
+            
+            // Update styling based on usage
+            if (used > max * 0.8) {
+                counter.classList.add('warning');
+                counter.classList.remove('danger');
+            } else {
+                counter.classList.remove('warning');
+                counter.classList.remove('danger');
+            }
+            
+            if (used > max) {
+                counter.classList.add('danger');
+            }
+        });
+        
+        // Initialize with current value
+        const initialUsed = input.value.length;
+        if (usedSpan) usedSpan.textContent = initialUsed;
+    });
+}
+
+// Initialize character counters
+document.addEventListener('DOMContentLoaded', function() {
+    initCharacterCounters();
+});
+
 // Export for use in other modules
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
