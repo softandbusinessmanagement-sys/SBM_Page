@@ -1,0 +1,747 @@
+/* ==========================================
+   SBM TECH - UX/UI Enhancements
+   Dark Mode, Animations, Video Background, etc.
+   ========================================== */
+
+/* ==========================================
+   DARK/LIGHT MODE
+   ========================================== */
+
+/* Light Mode Variables */
+:root {
+    /* Light mode colors (default is dark) */
+    --light-bg-primary: #ffffff;
+    --light-bg-secondary: #f8f9fa;
+    --light-bg-tertiary: #f1f3f5;
+    --light-text-primary: #1a1a2e;
+    --light-text-secondary: #4a4a60;
+    --light-text-muted: #8888a0;
+    --light-glass-bg: rgba(255, 255, 255, 0.9);
+    --light-glass-border: rgba(0, 0, 0, 0.1);
+    --light-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --light-overlay: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Mode (already defined in styles.css) */
+/* This is just for reference - dark mode is the default */
+
+/* Apply Light Mode when class is added */
+body.light-mode {
+    --bg-dark: var(--light-bg-primary);
+    --bg-darker: var(--light-bg-secondary);
+    --bg-light: var(--light-bg-tertiary);
+    --text-primary: var(--light-text-primary);
+    --text-secondary: var(--light-text-secondary);
+    --text-muted: var(--light-text-muted);
+    --glass-bg: var(--light-glass-bg);
+    --glass-border: var(--light-glass-border);
+    --glass-shadow: var(--light-glass-shadow);
+    --hero-overlay: var(--light-overlay);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    background: var(--primary-bg);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: rotate(15deg);
+}
+
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+.theme-toggle .icon-moon {
+    display: block;
+}
+
+body.light-mode .theme-toggle .icon-sun {
+    display: block;
+}
+
+body.light-mode .theme-toggle .icon-moon {
+    display: none;
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+    position: absolute;
+    transition: all var(--transition);
+}
+
+/* ==========================================
+   FLUID ANIMATIONS
+   ========================================== */
+
+/* Enhanced Transitions */
+.btn,
+.nav-link,
+.service-card,
+.project-card,
+.testimonial-card,
+.glass-card,
+.contact-item {
+    transition: all var(--transition) !important;
+}
+
+/* Hover Effects */
+.btn {
+    transition: background-color var(--transition-fast), 
+                color var(--transition-fast), 
+                transform var(--transition-fast), 
+                box-shadow var(--transition-fast);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+}
+
+.btn-ghost:hover {
+    background: var(--glass-bg);
+    border-color: var(--primary);
+    color: var(--text-primary);
+}
+
+/* Card Hover Effects */
+.service-card:hover,
+.project-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 229, 255, 0.15) !important;
+    border-color: var(--primary) !important;
+}
+
+/* Nav Link Hover */
+.nav-link:hover {
+    color: var(--primary) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Social Links Hover */
+.social-link:hover,
+.social-link-large:hover {
+    transform: scale(1.15);
+    color: var(--primary) !important;
+}
+
+/* Contact Items Hover */
+.contact-item:hover {
+    background: var(--glass-bg);
+    border-radius: var(--border-radius);
+}
+
+/* Reveal Animation Enhancement */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--transition-slow), 
+                transform var(--transition-slow);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger Animation for Stats */
+.hero-stats .stat-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.hero-stats .stat-item:nth-child(1) { transition-delay: 0.1s; }
+.hero-stats .stat-item:nth-child(2) { transition-delay: 0.2s; }
+.hero-stats .stat-item:nth-child(3) { transition-delay: 0.3s; }
+
+.hero-stats .stat-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Service Features Animation */
+.service-features li {
+    transition: color var(--transition-fast);
+}
+
+.service-features li:nth-child(1) { transition-delay: 0.1s; }
+.service-features li:nth-child(2) { transition-delay: 0.2s; }
+.service-features li:nth-child(3) { transition-delay: 0.3s; }
+.service-features li:nth-child(4) { transition-delay: 0.4s; }
+
+/* Project Tags Animation */
+.tech-tag {
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.tech-tag:nth-child(1) { transition-delay: 0.1s; }
+.tech-tag:nth-child(2) { transition-delay: 0.2s; }
+.tech-tag:nth-child(3) { transition-delay: 0.3s; }
+
+/* ==========================================
+   SCROLL ANIMATIONS (AOS-like)
+   ========================================== */
+
+/* Fade In Up */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--transition-slow), 
+                transform var(--transition-slow);
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In Left */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity var(--transition-slow), 
+                transform var(--transition-slow);
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade In Right */
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity var(--transition-slow), 
+                transform var(--transition-slow);
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale In */
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity var(--transition-slow), 
+                transform var(--transition-slow);
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ==========================================
+   VIDEO BACKGROUND
+   ========================================== */
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-background);
+    overflow: hidden;
+}
+
+.hero-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--bg-darker) 0%, transparent 50%, var(--bg-darker) 100%);
+    z-index: -1;
+}
+
+/* Fallback for mobile (no video) */
+@media (max-width: 768px) {
+    .hero-bg-video {
+        display: none;
+    }
+    
+    .hero-bg-image {
+        background-attachment: scroll;
+    }
+}
+
+/* Video Testimonial Container */
+.video-testimonial {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    transition: all var(--transition);
+}
+
+.video-testimonial:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2);
+}
+
+.video-testimonial .video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--bg-darker);
+}
+
+.video-testimonial video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+.video-testimonial .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 229, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.video-testimonial .play-overlay:hover {
+    background: var(--primary);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-testimonial .play-overlay i {
+    color: var(--bg-dark);
+    font-size: 1.5rem;
+    margin-left: 3px;
+}
+
+.video-testimonial .testimonial-info {
+    padding: 16px;
+}
+
+.video-testimonial .testimonial-info h4 {
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.video-testimonial .testimonial-info p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+/* ==========================================
+   CALENDLY INTEGRATION
+   ========================================== */
+
+.calendly-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--primary);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.calendly-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
+}
+
+.calendly-inline-widget {
+    width: 100%;
+    min-height: 600px;
+    margin: 24px 0;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+}
+
+.calendly-inline-widget iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ==========================================
+   NOTIFICATION BAR
+   ========================================== */
+
+.notification-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    color: var(--bg-dark);
+    padding: 16px 24px;
+    text-align: center;
+    z-index: var(--z-fixed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    animation: slideInFromBottom 0.5s ease forwards;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.notification-bar.hidden {
+    display: none;
+}
+
+.notification-bar .btn-notification {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    font-size: var(--font-size-sm);
+}
+
+.notification-bar .btn-notification:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.notification-bar .close-notification {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--bg-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+}
+
+.notification-bar .close-notification:hover {
+    opacity: 1;
+}
+
+/* ==========================================
+   CHATBOT STYLES
+   ========================================== */
+
+.chatbot-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 229, 255, 0.4);
+    z-index: var(--z-fixed);
+    transition: all var(--transition-fast);
+}
+
+.chatbot-widget:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 229, 255, 0.5);
+}
+
+.chatbot-widget i {
+    color: var(--bg-dark);
+    font-size: 1.5rem;
+}
+
+.chatbot-popup {
+    position: fixed;
+    bottom: 100px;
+    right: 24px;
+    width: 350px;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--glass-shadow);
+    z-index: var(--z-fixed);
+    display: none;
+    flex-direction: column;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.chatbot-popup.active {
+    display: flex;
+}
+
+.chatbot-header {
+    padding: 16px;
+    background: var(--primary);
+    color: var(--bg-dark);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.chatbot-header .close-chat {
+    background: none;
+    border: none;
+    color: var(--bg-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.chatbot-messages {
+    padding: 16px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chatbot-message {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border-radius: var(--border-radius);
+    max-width: 80%;
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+.chatbot-message.user {
+    background: var(--primary);
+    color: var(--bg-dark);
+    margin-left: auto;
+    border-bottom-right-radius: 0;
+}
+
+.chatbot-message.bot {
+    background: var(--glass-bg);
+    color: var(--text-secondary);
+    margin-right: auto;
+    border-bottom-left-radius: 0;
+}
+
+.chatbot-input {
+    padding: 16px;
+    border-top: 1px solid var(--glass-border);
+    display: flex;
+    gap: 8px;
+}
+
+.chatbot-input input {
+    flex: 1;
+    padding: 12px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+}
+
+.chatbot-input button {
+    padding: 12px 16px;
+    background: var(--primary);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.ripple:active::after {
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 1;
+}
+
+/* Glow effect for primary elements */
+.glow {
+    position: relative;
+}
+
+.glow::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--primary), var(--primary-light));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity var(--transition);
+}
+
+.glow:hover::before {
+    opacity: 0.3;
+}
+
+/* ==========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================== */
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .notification-bar {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        padding: 12px;
+    }
+    
+    .notification-bar .close-notification {
+        position: static;
+        transform: none;
+        margin-left: auto;
+    }
+    
+    .chatbot-widget {
+        bottom: 16px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .chatbot-popup {
+        bottom: 80px;
+        right: 16px;
+        width: calc(100% - 32px);
+        max-width: 320px;
+    }
+    
+    .hero-bg-video {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .notification-bar {
+        display: none;
+    }
+    
+    .chatbot-widget {
+        display: none;
+    }
+}

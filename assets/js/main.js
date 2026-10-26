@@ -6,12 +6,46 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initHeader();
     initMobileMenu();
+    initThemeToggle();
     initScrollAnimations();
     initBackToTop();
     initProjectsFilter();
     initSmoothScroll();
     initLoadingScreen();
 });
+
+// ========== COLOR THEME ==========
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    if (!themeToggle) return;
+
+    const storageKey = 'sbm-tech-theme';
+    let savedTheme = null;
+    try {
+        savedTheme = window.localStorage.getItem(storageKey);
+    } catch (error) {
+        // The control still works when storage is unavailable.
+    }
+
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const applyTheme = theme => {
+        const isLight = theme === 'light';
+        document.body.classList.toggle('light-mode', isLight);
+        themeToggle.setAttribute('aria-pressed', String(isLight));
+        themeToggle.setAttribute('aria-label', isLight ? 'Activar tema oscuro' : 'Activar tema claro');
+    };
+
+    applyTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : (prefersLight ? 'light' : 'dark'));
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+        applyTheme(nextTheme);
+        try {
+            window.localStorage.setItem(storageKey, nextTheme);
+        } catch (error) {
+            // Keep the selected theme for this page even when storage is unavailable.
+        }
+    });
+}
 
 // ========== LOADING SCREEN ==========
 function initLoadingScreen() {
@@ -95,6 +129,11 @@ function initMobileMenu() {
 // ========== SCROLL ANIMATIONS ==========
 function initScrollAnimations() {
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+    if (!('IntersectionObserver' in window)) {
+        revealElements.forEach(element => element.classList.add('visible'));
+        return;
+    }
     
     const observerOptions = {
         threshold: 0.1,

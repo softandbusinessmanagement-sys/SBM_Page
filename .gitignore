@@ -60,10 +60,6 @@ coverage/
 *.backup
 *.orig
 
-# Images optimization
-assets/images/*
-!assets/images/.gitkeep
-
 # Local overrides
 local.css
 custom.css
