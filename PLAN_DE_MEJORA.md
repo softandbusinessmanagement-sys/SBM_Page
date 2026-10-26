@@ -37,7 +37,7 @@ Este documento presenta un plan de mejora **específico para el sitio web** de S
     - `/blog/`
   
 - [ ] **Keywords estratégicas para SBM TECH**
-  - Principales (enfocado en Huancayo/Perú):
+  - **Principales (enfocado en Huancayo/Perú):**
     - "desarrollo de software Huancayo"
     - "empresa de software Huancayo"
     - "desarrollador de software Perú"
@@ -46,12 +46,8 @@ Este documento presenta un plan de mejora **específico para el sitio web** de S
     - "automatización con IA"
     - "sistemas a medida Huancayo"
     - "desarrollo web Perú"
-  - Secundarias:
-    - "programador Java Huancayo"
-    - "C++ developer Perú"
-    - "bases de datos SQL Server"
-    - "páginas web para negocios"
     - "soluciones de software empresarial"
+    - "programador Java Huancayo"
   
 - [ ] **Meta Tags optimizados**
   - Cada página debe tener:
@@ -62,12 +58,11 @@ Este documento presenta un plan de mejora **específico para el sitio web** de S
     - Twitter Cards
   
 - [ ] **Schema Markup**
-  - Implementar en todas las páginas:
-    - `LocalBusiness` (para SBM TECH)
-    - `Service` (para cada servicio)
-    - `Person` (para Joseph Eduardo)
-    - `BreadcrumbList` (navegación)
-    - `FAQPage` (si se añade sección de preguntas)
+  - `LocalBusiness` (para SBM TECH con dirección, teléfono, horario)
+  - `Service` (para cada servicio ofrecido)
+  - `Person` (para Joseph Eduardo con habilidades y experiencia)
+  - `BreadcrumbList` (navegación estructurada)
+  - `FAQPage` (si se añade sección de preguntas frecuentes)
   
 - [ ] **Encabezados jerárquicos**
   - Asegurar que cada página tenga H1 único
@@ -78,33 +73,34 @@ Este documento presenta un plan de mejora **específico para el sitio web** de S
 
 - [ ] **Sitemap XML**
   - Crear sitemap.xml con todas las páginas
-  - Incluir prioritización
+  - Incluir prioridades (páginas principales: 1.0, secundarias: 0.8)
   - Enviar a Google Search Console
   
 - [ ] **Robots.txt**
-  - Crear archivo robots.txt
-  - Permitir indexación de todas las páginas públicas
+  - Crear archivo con reglas claras
+  - Permitir indexación de páginas públicas
   - Bloquear páginas administrativas si las hay
   
 - [ ] **Estructura de enlaces internos**
-  - Añadir enlaces contextuales entre páginas
-  - Usar anchor text descriptivo (no "click aquí")
-  - Crear menú de navegación claro
+  - Añadir enlaces contextuales entre páginas relacionadas
+  - Usar anchor text descriptivo (ej: "desarrollo de software SaaS" en lugar de "click aquí")
+  - Crear menú de navegación claro y accesible
   
 - [ ] **Canonical URLs**
-  - Implementar tags canónicas para evitar contenido duplicado
+  - Implementar para evitar contenido duplicado
+  - Auto-generar para cada página
 
 ### 2.3. SEO de Contenido
 
 - [ ] **Contenido único y de valor**
-  - Aumentar contenido textual en cada página (mínimo 300 palabras)
+  - Aumentar contenido textual en cada página (mínimo 300-500 palabras)
   - Crear páginas individuales para cada servicio
   - Añadir sección de blog con artículos técnicos
   
 - [ ] **Optimización de imágenes**
-  - Comprimir todas las imágenes (usar formato WebP)
-  - Añadir atributos `alt` descriptivos con keywords
-  - Usar nombres de archivo descriptivos (ej: desarrollo-software-huancayo.jpg)
+  - **Comprimir todas las imágenes** (usar formato WebP)
+  - **Añadir atributos `alt` descriptivos** con keywords naturales
+  - Usar nombres de archivo descriptivos (ej: `desarrollo-software-huancayo.webp`)
   - Implementar lazy loading para todas las imágenes
 
 ---
@@ -114,36 +110,34 @@ Este documento presenta un plan de mejora **específico para el sitio web** de S
 ### 3.1. Mejoras de Carga (Alta Prioridad)
 
 - [ ] **Minificación de recursos**
-  - Minificar CSS (usar cssnano o similar)
-  - Minificar JavaScript (usar terser o similar)
+  - Minificar CSS (usar cssnano)
+  - Minificar JavaScript (usar terser)
   - Minificar HTML
   
 - [ ] **Compresión GZIP/Brotli**
-  - Configurar en el servidor
+  - Configurar en el servidor o hosting
   
 - [ ] **Cache Browser**
   - Configurar headers Cache-Control para assets estáticos
   - Cache de 1 año para CSS, JS, imágenes
-  
-- [ ] **CDN para assets**
-  - Usar Cloudflare CDN (gratis)
-  - O migrar a hosting con CDN integrado (Vercel, Netlify)
+  - Cache de 1 hora para HTML
 
 ### 3.2. Optimización de Recursos
 
 - [ ] **Reducir tamaño de imágenes**
-  - Hero image: < 200KB
+  - Hero image: < 200KB (actualmente ~85KB - OK)
   - Otras imágenes: < 100KB
-  - Usar formato WebP en lugar de JPG/PNG
+  - **Convertir a formato WebP** (mejor compresión que JPG/PNG)
   - Usar srcset para imágenes responsivas
   
 - [ ] **Defer y Async para JS**
-  - Cargar scripts no críticos con defer/async
-  - Cargar Font Awesome localmente o usar solo los iconos necesarios
+  - Cargar scripts no críticos con `defer` o `async`
+  - Cargar Font Awesome localmente (solo los iconos usados)
+  - Reducir número de librerías externas
   
 - [ ] **Critical CSS**
-  - Inline CSS crítico para above-the-fold
-  - Cargar el resto asíncronamente
+  - Inline CSS crítico para above-the-fold content
+  - Cargar el resto de CSS asíncronamente
 
 ### 3.3. Optimización de Renderizado
 
@@ -152,243 +146,313 @@ Este documento presenta un plan de mejora **específico para el sitio web** de S
   - JavaScript no crítico deferido
   
 - [ ] **Preload recursos clave**
-  - Preload de fonts
+  - Preload de fonts (Inter)
   - Preload de CSS principal
   
 - [ ] **Reduce DOM size**
-  - Minimizar número de elementos DOM
+  - Minimizar número de elementos DOM (< 1500 para mobile)
   - Simplificar estructura HTML
 
 ---
 
-## 4. Experiencia de Usuario (UX)
+## 4. Experiencia de Usuario (UX) y Diseño
 
 ### 4.1. Navegación y Estructura
 
 - [ ] **Menú de navegación mejorado**
-  - Añadir submenú para Servicios
-  - Añadir enlace a Blog
-  - Añadir enlace a Aplicaciones (docx2pdf, etc.)
+  - Añadir submenú desplegable para "Servicios"
+  - Añadir enlace a "Blog" en el menú principal
+  - Añadir enlace a "Aplicaciones" (para docx2pdf y futuras)
+  - Menú sticky que persiste al hacer scroll
   
 - [ ] **Breadcrumbs**
-  - Implementar en todas las páginas
+  - Implementar en todas las páginas (Ej: Inicio > Servicios > SaaS)
+  - Usar schema markup para breadcrumbs
   
 - [ ] **Sticky header**
-  - Header fijo al hacer scroll
-  
-- [ ] **Back to top button** (ya implementado)
-  - Mejorar diseño y animación
+  - Header fijo en la parte superior al hacer scroll
+  - Reducir tamaño en scroll para más espacio
 
-### 4.2. Diseño y Visual
+### 4.2. Diseño Visual y Branding
 
-- [ ] **Consistencia de diseño**
-  - Revisar colores, tipografía y spacing
-  - Asegurar coherencia en todos los componentes
+- [ ] **Foto de perfil profesional**
+  - ✅ **RUTA CORREGIDA**: Ahora apunta a `assets/images/Foto de perfil.jpg`
+  - **Recomendaciones:**
+    - Usar formato WebP para reducir tamaño
+    - Tamaño ideal: 400x400px (cuadrada)
+    - Optimizar con herramientas como TinyPNG
+    - Añadir `alt` text más descriptivo: "Joseph Eduardo Huatuco Buendia, Fundador de SBM TECH"
   
-- [ ] **Micro-interacciones**
-  - Añadir animaciones sutiles en hover
-  - Mejorar feedback visual en CTA
-  
-- [ ] **Loading states**
-  - Implementar skeletons para carga de contenido
+- [ ] **Consistencia visual**
+  - Crear design system con colores, tipografía, spacing definidos
+  - Asegurar coherencia en botones, cards, secciones
+  - Usar la misma paleta de colores en todo el sitio
 
-### 4.3. Mobile Optimization
+### 4.3. Interacciones y Animaciones (MEJORADO)
 
-- [ ] **Testeo exhaustivo en mobile**
-  - Revisar en múltiples dispositivos y tamaños
-  - Corregir problemas de usabilidad
-  
-- [ ] **Viewports adaptativos**
-  - Asegurar que todos los elementos sean tappeables
-  - Optimizar tamaño de touch targets (>48x48px)
-  
-- [ ] **Menú mobile mejorado**
-  - Implementar hamburger menu
-  - Añadir overlay para cerrar
+#### **Dark/Light Mode Toggle** 🌓
+- [ ] **Implementación:**
+  - Añadir botón de toggle en header (junto al menú)
+  - Usar preferencias del sistema (prefers-color-scheme)
+  - Guardar preferencia en localStorage
+  - Transición suave entre modos (0.3s)
+- [ ] **Diseño:**
+  - Icono: 🌙 (oscuro) / ☀️ (claro)
+  - Posición: Header (lado derecho)
+  - Estilos: Botón minimalista con tooltip
+- [ ] **Colores:**
+  - Modo oscuro: Actual (negro/azul oscuro)
+  - Modo claro: Fondo blanco, texto oscuro, primary color mantenido
+
+#### **Animaciones más Fluidas** ✨
+- [ ] **Transiciones suaves:**
+  - Botones: `transition: all 0.3s ease` (hover, focus)
+  - Cards: `transition: transform 0.3s ease, box-shadow 0.3s ease`
+  - Enlaces: `transition: color 0.2s ease`
+- [ ] **Scroll animations:**
+  - Usar Intersection Observer para animaciones al hacer scroll
+  - Efectos: fade-in, slide-up, scale-in
+  - Biblias recomendadas: AOS (Animate On Scroll) o GSAP
+- [ ] **Micro-interacciones:**
+  - Hover en botones: Elevación + sombra + cambio de color
+  - Hover en cards: Elevación sutil (2-4px)
+  - Click feedback: Efecto ripple o scale down
+  - Loading states: Spinners o skeletons
+
+#### **Video Background en Hero Section** 🎥
+- [ ] **Implementación:**
+  - Usar video HTML5 con fallback a imagen
+  - Formato: MP4 (WebM opcional)
+  - Tamaño: < 5MB (comprimido)
+  - Duración: 10-15 segundos (loop)
+- [ ] **Diseño:**
+  - Video con opacidad reducida (overlay oscuro)
+  - Contenido de texto encima con fondo semi-transparente
+  - Botón de pause/play opcional
+- [ ] **Fallback:**
+  - Imagen estática para mobile (ahorra datos)
+  - Imagen estática si video no carga
+- [ ] **Recomendación:**
+  - Video de desarrollo de software (time-lapse de codificación)
+  - O fondo abstracto tecnológico
+
+#### **Testimonios en Video** 🎬
+- [ ] **Implementación:**
+  - Grabación: 30-60 segundos por testimonio
+  - Formato: MP4, relación 16:9 o 1:1
+  - Calidad: 720p mínimo
+- [ ] **Diseño:**
+  - Player personalizado (no YouTube embed)
+  - Thumbnail con play button superpuesto
+  - Transcripción de texto debajo
+- [ ] **Contenido:**
+  - Cliente hablando de su experiencia
+  - Nombre, empresa y cargo visibles
+  - Subtítulos en español
+- [ ] **Ejemplo de estructura:**
+  ```html
+  <div class="video-testimonial">
+    <video controls poster="thumbnail.jpg">
+      <source src="testimonio-cliente.mp4" type="video/mp4">
+    </video>
+    <div class="testimonial-info">
+      <h4>Nombre del Cliente</h4>
+      <p>Empresa - Cargo</p>
+    </div>
+  </div>
+  ```
+
+#### **Calendario de Reunión (Calendly)** 📅
+- [ ] **Implementación:**
+  - Integración con Calendly (gratis)
+  - Opción 1: Embed directo en página de contacto
+  - Opción 2: Botón que abre Calendly en popup
+  - Opción 3: Enlace a página de Calendly
+- [ ] **Diseño:**
+  - Botón: "Agendar Reunión" o "Hablar con un experto"
+  - Posición: Hero section, contacto, footer
+  - Estilo: Botón primary o ghost
+- [ ] **Configuración:**
+  - Horario: Lun-Dom 8:00-22:00 (como indicas en tu web)
+  - Duración: 30 minutos (consulta inicial)
+  - Tipos de reunión: Cotización, Consulta, Demo
+- [ ] **Beneficios:**
+  - Reduce fricción (cliente elige horario)
+  - Evita emails de ida y vuelta
+  - Confirmación automática por email
+
+### 4.4. Conversión y Engagement (MEJORADO)
+
+#### **Chatbot** 💬
+- [ ] **Implementación:**
+  - Usar Tawk.to (gratis) o Crisp (freemium)
+  - Opción: Chatbot simple con preguntas frecuentes
+  - Integración: Botón flotante en esquina inferior
+- [ ] **Funcionalidades:**
+  - Respuestas automáticas a preguntas comunes:
+    - "¿Cuánto cuesta un sistema SaaS?"
+    - "¿En qué tecnologías trabajan?"
+    - "¿Cuál es el tiempo de entrega?"
+  - Opción de transferir a humano
+  - Historial de chats
+- [ ] **Diseño:**
+  - Avatar personalizado (logo SBM TECH)
+  - Colores: Primary color (#00E5FF)
+  - Mensaje de bienvenida personalizado
+- [ ] **Horario:**
+  - Chatbot: 24/7
+  - Chat humano: Según tu disponibilidad
+
+#### **Pop-ups Inteligentes** 🎯
+- [ ] **Tipos de pop-ups:**
+  1. **Exit-intent**: Cuando el usuario intenta salir
+     - Mensaje: "¿Necesitas ayuda con tu proyecto?"
+     - CTA: "Agendar reunión" o "Contactar"
+  2. **Scroll-triggered**: Cuando llega al 70% del scroll
+     - Mensaje: "Descarga nuestra guía gratuita"
+     - CTA: "Descargar ahora"
+  3. **Time-delayed**: Después de 30 segundos en el sitio
+     - Mensaje: "¿Quieres saber cómo podemos ayudarte?"
+     - CTA: "Hablar con un experto"
+- [ ] **Diseño:**
+  - Tamaño: 400-500px de ancho
+  - Posición: Centro o esquina inferior derecha
+  - Estilo: Modal con overlay oscuro
+  - Cierre fácil: Botón X visible
+- [ ] **Frecuencia:**
+  - Mostrar solo 1 vez por sesión
+  - Cookies para no mostrar a usuarios que ya interactuaron
+
+#### **Barra de Notificaciones** 📢
+- [ ] **Implementación:**
+  - Barra superior o inferior fija
+  - Deslizable desde un lado
+- [ ] **Usos:**
+  - Promociones: "¡10% de descuento en el primer proyecto!"
+  - Novedades: "Nueva herramienta: docx2pdf"
+  - Eventos: "Webinar: Automatización con IA"
+- [ ] **Diseño:**
+  - Colores: Primary color con texto blanco
+  - Tamaño: 40-50px de alto
+  - Animación: Slide in/out suave
+  - Botón de cierre: X en el lado derecho
+- [ ] **Ejemplo:**
+  ```html
+  <div class="notification-bar" style="background: #00E5FF;">
+    <span>🎉 Nueva herramienta: Convierte archivos a PDF con docx2pdf</span>
+    <a href="https://docx2pdf-jet.vercel.app/" class="btn-notification">Probar ahora</a>
+    <button class="close-notification">×</button>
+  </div>
+  ```
+
+#### **Sistema de Citas Online** 📆
+- [ ] **Alternativas a Calendly:**
+  - **Calendly** (gratis, fácil)
+  - **YouCanBook.me** (más personalizable)
+  - **Acuity Scheduling** (para empresas)
+  - **Google Calendar + App Script** (solución DIY)
+- [ ] **Integración:**
+  - Embed en página de contacto
+  - Botón en header
+  - Enlace en CTA
+- [ ] **Tipos de citas:**
+  - Consulta inicial (30 min, gratis)
+  - Reunión de cotización (60 min)
+  - Demo técnica (45 min)
+  - Seguimiento (30 min)
+
+#### **Portafolio Interactivo** 🎨
+- [ ] **Demostraciones en vivo:**
+  - **Para aplicaciones web** (como docx2pdf):
+    - Iframe embed directo
+    - Video demo (grabación de pantalla)
+    - Screenshots interactivos (con tooltip)
+  - **Para proyectos desktop** (Taller Buendía):
+    - Video demo
+    - Screenshots con descripciones
+    - Diagrama de arquitectura
+- [ ] **Diseño:**
+  - Cards con tabs: "Descripción", "Tecnologías", "Demo"
+  - Botón "Ver Demo" que abre modal o nueva pestaña
+  - Galería de imágenes con lightbox
+- [ ] **Ejemplo para docx2pdf:**
+  ```html
+  <div class="portfolio-item">
+    <h3>docx2pdf</h3>
+    <p>Convierte archivos y carpetas a PDF...</p>
+    <div class="demo-section">
+      <iframe 
+        src="https://docx2pdf-jet.vercel.app/" 
+        frameborder="0" 
+        allowfullscreen>
+      </iframe>
+      <a href="https://docx2pdf-jet.vercel.app/" target="_blank" class="btn">
+        Probar aplicación
+      </a>
+    </div>
+  </div>
+  ```
 
 ---
 
-## 5. Conversión y Leads
+## 5. Implementación del Plan
 
-### 5.1. Call-to-Action (CTA)
+### Prioridades de Implementación
 
-- [ ] **CTA estratégicos**
-  - Añadir CTA en header (ej: "Agendar llamada")
-  - Añadir CTA después de cada sección de servicio
-  - Añadir CTA en footer
-  
-- [ ] **Diseño de CTA**
-  - Botones con colores contrastantes
-  - Textos claros y directos
-  - Usar verbos de acción ("Solicitar", "Descargar", "Agendar")
+#### 🔴 **Alta Prioridad (1-2 semanas)**
+1. ✅ **Corregir ruta de foto de perfil** (YA HECHO)
+2. [ ] Implementar URLs amigables (sin hashtags)
+3. [ ] Crear sitemap.xml y robots.txt
+4. [ ] Minificar CSS y JavaScript
+5. [ ] Comprimir imágenes a WebP
+6. [ ] Añadir schema markup básico
 
-### 5.2. Formularios Optimizados
+#### 🟡 **Media Prioridad (2-4 semanas)**
+1. [ ] Dark/Light mode toggle
+2. [ ] Animaciones más fluidas (scroll, hover)
+3. [ ] Implementar breadcrumbs
+4. [ ] Menú de navegación mejorado (submenús)
+5. [ ] Calendario de reunión (Calendly)
+6. [ ] Pop-ups inteligentes (1 tipo inicial)
 
-- [ ] **Formulario de contacto**
-  - Reducir campos (solo: nombre, email, mensaje)
-  - Añadir validación en tiempo real
-  - Mensaje de éxito/error claro
-  - Confirmación por email
-  
-- [ ] **Formulario de newsletter**
-  - Crear formulario de suscripción
-  - Lead magnet (ej: guía gratuita)
-  
-- [ ] **WhatsApp integration** (ya implementado)
-  - Asegurar que el botón flote sea visible
-  - Pre-cargar mensaje con contexto
-
-### 5.3. Landing Pages
-
-- [ ] **Páginas de servicio individuales**
-  - Crear página para cada servicio:
-    - /servicios/saas/
-    - /servicios/software-a-medida/
-    - /servicios/landing-pages/
-    - /servicios/automatizacion-ia/
-  - Cada página con:
-    - Descripción detallada
-    - Beneficios
-    - Casos de uso
-    - Precios (opcional)
-    - CTA específico
-    - Testimonios relevantes
-    - FAQ
+#### 🟢 **Baja Prioridad (1-2 meses)**
+1. [ ] Video background en hero section
+2. [ ] Testimonios en video (grabación)
+3. [ ] Chatbot para el sitio
+4. [ ] Barra de notificaciones
+5. [ ] Portafolio interactivo con demos
+6. [ ] Sistema de citas completo
 
 ---
 
-## 6. Contenido del Sitio Web
-
-### 6.1. Blog Técnico
-
-- [ ] **Sección de blog**
-  - Crear página /blog/
-  - Diseño consistente con el sitio
-  - Categorías: Desarrollo, SaaS, IA, Casos de Éxito
-  
-- [ ] **Artículos iniciales**
-  - "Cómo elegir el mejor sistema SaaS para tu negocio"
-  - "Ventajas del software a medida vs soluciones genéricas"
-  - "Cómo la automatización con IA puede ahorrarle tiempo a tu empresa"
-  - "Tendencias de desarrollo web 2025"
-  - "Casos de éxito: Transformación digital con SBM TECH"
-  
-- [ ] **Estrategia de contenido**
-  - 1 artículo/semana (mínimo)
-  - 1000+ palabras por artículo
-  - Optimizado para SEO
-  - Con imágenes y ejemplos
-
-### 6.2. Portafolio Mejorado
-
-- [ ] **Páginas individuales para proyectos**
-  - Crear página para cada proyecto:
-    - /proyectos/gmschool/
-    - /proyectos/taller-buendia/
-    - /proyectos/docx2pdf/
-    - /proyectos/incubadora-arduino/
-  - Cada página con:
-    - Descripción completa
-    - Tecnologías usadas
-    - Screenshots/videos
-    - Retos y soluciones
-    - Testimonios del cliente
-    - Métricas de éxito
-
-### 6.3. Sección de Aplicaciones
-
-- [ ] **Página de herramientas**
-  - Crear /aplicaciones/
-  - Listar todas las herramientas desarrolladas:
-    - docx2pdf (con enlace a https://docx2pdf-jet.vercel.app/)
-    - Futuras herramientas
-  - Descripción de cada una
-  - Beneficios
-  - Tecnologías usadas
-
-### 6.4. Sección de Recursos Gratuitos
-
-- [ ] **Recursos descargables**
-  - Plantilla: "Checklist para contratar un desarrollador"
-  - Guía: "Cómo digitalizar tu negocio en 5 pasos"
-  - Plantilla: "Brief para proyecto de software"
-  - Checklist: "Qué incluir en tu landing page"
-  
-- [ ] **Formularios de descarga**
-  - Capturar email para envío
-  - Segmentar por interés
-
----
-
-## 7. Herramientas y Aplicaciones Integradas
-
-### 7.1. Aplicaciones Externas (enlaces)
-
-- [x] **docx2pdf** - https://docx2pdf-jet.vercel.app/
-  - Añadir página de presentación en el sitio
-  - Enlace en menú
-  - Enlace en proyectos
-  - Enlace en footer
-
-### 7.2. Herramientas a Desarrollar
-
-- [ ] **Página de "Nuestras Aplicaciones"**
-  - Listado centralizado
-  - Descripciones y beneficios
-  - Enlaces directos
-
----
-
-## 8. Implementación del Plan
-
-### Fase 1: Fundamentos Técnicos (1-2 semanas)
-- [ ] Optimización de velocidad (minificación, cache, CDN)
-- [ ] Estructura de URLs amigables
-- [ ] SEO técnico básico (sitemap, robots.txt)
-- [ ] Schema markup en todas las páginas
-
-### Fase 2: Contenido y Estructura (3-4 semanas)
-- [ ] Crear páginas individuales para servicios
-- [ ] Crear sección de blog con 4 artículos iniciales
-- [ ] Crear páginas individuales para proyectos
-- [ ] Crear página de aplicaciones
-
-### Fase 3: Conversión y UX (2-3 semanas)
-- [ ] Optimizar formularios
-- [ ] Añadir CTA estratégicos
-- [ ] Mejorar navegación y menús
-- [ ] Implementar breadcrumbs
-
-### Fase 4: Optimización Continua ( mensual)
-- [ ] Publicar 1 artículo de blog/semana
-- [ ] Añadir nuevos proyectos al portafolio
-- [ ] Monitorear y ajustar SEO
-- [ ] Test A/B de CTA y landing pages
-
----
-
-## 9. Herramientas Recomendadas
+## 6. Recursos y Herramientas Recomendadas
 
 ### Para Desarrollo:
 - **Google PageSpeed Insights** - Analizar velocidad
-- **Lighthouse** (en Chrome DevTools) - Auditoría completa
+- **Lighthouse** (Chrome DevTools) - Auditoría completa
 - **WebPageTest** - Testing de rendimiento
 - **Screaming Frog** - Crawling del sitio
 
 ### Para SEO:
 - **Google Search Console** - Monitoreo de indexación
 - **Google Analytics 4** - Tracking de tráfico
-- **Ahrefs** o **SEMrush** - Análisis de keywords y competencia
 - **AnswerThePublic** - Investigación de contenido
+- **TinyPNG** - Compresión de imágenes
 
 ### Para Diseño:
 - **Figma** - Diseño de nuevas páginas
 - **Canva** - Creación de gráficos
 - **Coolors** - Paleta de colores
+- **Remove.bg** - Eliminar fondo de imágenes
+
+### Para UX:
+- **Hotjar** - Grabación de sesiones de usuarios
+- **Google Optimize** - A/B testing
+- **UserTesting** - Pruebas con usuarios reales
 
 ---
 
-## 10. Métricas de Éxito
+## 7. Métricas de Éxito
 
 ### Velocidad:
 - [ ] PageSpeed Score: > 85 (Desktop), > 75 (Mobile)
@@ -412,42 +476,33 @@ Este documento presenta un plan de mejora **específico para el sitio web** de S
 
 ---
 
-## 11. Checklist de Implementación Inmediata
+## 8. Conclusión
 
-### Esta Semana:
-- [ ] Crear sitemap.xml
-- [ ] Crear robots.txt
-- [ ] Minificar CSS y JavaScript
-- [ ] Comprimir imágenes a WebP
-- [ ] Añadir schema markup básico
+Este plan de mejora está **100% enfocado en el sitio web** de SBM TECH. Las mejoras de **UX/UI** propuestas están organizadas por prioridad y incluyen:
 
-### Siguiente Semana:
-- [ ] Implementar URLs amigables
-- [ ] Crear página individual para 1 servicio
-- [ ] Crear página individual para 1 proyecto
-- [ ] Añadir sección de blog con 1 artículo
-- [ ] Optimizar meta tags de todas las páginas
+### 🎨 **Mejoras Visuales:**
+- Dark/Light mode para mejor experiencia
+- Animaciones fluidas para engagement
+- Video background para impacto visual
 
----
+### 🎯 **Mejoras de Conversión:**
+- Chatbot para atención 24/7
+- Pop-ups inteligentes para captar leads
+- Barra de notificaciones para promociones
+- Calendario de citas para agendar reuniones
+- Portafolio interactivo con demos
 
-## 12. Conclusión
+### 📱 **Mejoras de UX:**
+- Testimonios en video para mayor credibilidad
+- Navegación mejorada con breadcrumbs
+- Menú sticky para acceso rápido
 
-Este plan de mejora está **100% enfocado en el sitio web** de SBM TECH. Las prioridades son:
-
-1. **Velocidad**: Mejorar el rendimiento técnico
-2. **SEO**: Optimizar para que Google posicione mejor el sitio
-3. **Contenido**: Añadir más contenido de valor
-4. **Conversión**: Optimizar para generar más leads
-
-**Orden recomendado de implementación:**
-1. Mejoras técnicas (velocidad, SEO técnico)
-2. Estructura y navegación
-3. Contenido (servicios, proyectos, blog)
-4. Conversión (CTA, formularios)
+**Recomendación:** Empieza con las mejoras de **alta prioridad** (corrección de foto, URLs amigables, SEO técnico) y luego avanza con las de **media prioridad** (dark mode, animaciones, Calendly). Las mejoras de **baja prioridad** (video background, testimonios en video) pueden esperarse a que tengas más recursos.
 
 ---
 
 *Documento creado: 26 de Octubre de 2024*
-*Versión: 2.0*
+*Última actualización: 26 de Octubre de 2024*
+*Versión: 3.0*
 *Enfoque: 100% Sitio Web de SBM TECH*
 *Autor: SBM TECH*
