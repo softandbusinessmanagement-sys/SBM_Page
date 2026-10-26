@@ -1214,3 +1214,88 @@
     from { transform: translateX(100%); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
 }
+
+/* ========== FORM ERROR STATES ========== */
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+    border-color: var(--danger) !important;
+    background: rgba(255, 95, 87, 0.05) !important;
+    box-shadow: 0 0 0 3px rgba(255, 95, 87, 0.2);
+}
+
+.form-input:focus.error,
+.form-select:focus.error,
+.form-textarea:focus.error {
+    border-color: var(--danger) !important;
+    background: rgba(255, 95, 87, 0.1) !important;
+}
+
+.form-error {
+    color: var(--danger);
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: block;
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-3px); }
+    40%, 80% { transform: translateX(3px); }
+}
+
+/* Character counter for textarea */
+.char-counter {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+.char-counter.warning {
+    color: var(--warning);
+}
+
+.char-counter.danger {
+    color: var(--danger);
+}
+
+/* Form input focus with label animation */
+.form-label.filled {
+    transform: translateY(-0.5rem);
+    font-size: 0.75rem;
+    color: var(--primary);
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-label {
+    position: absolute;
+    top: 0.875rem;
+    left: 1rem;
+    padding: 0 0.5rem;
+    background: var(--bg-dark);
+    transition: all var(--transition);
+    pointer-events: none;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    padding-top: 1.5rem;
+}
+
+.form-input:focus + .form-label,
+.form-select:focus + .form-label,
+.form-textarea:focus + .form-label,
+.form-input.filled + .form-label,
+.form-select.filled + .form-label,
+.form-textarea.filled + .form-label {
+    transform: translateY(-0.5rem);
+    font-size: 0.75rem;
+    color: var(--primary);
+}
