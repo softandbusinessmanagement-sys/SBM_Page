@@ -1258,20 +1258,7 @@
     color: var(--warning);
 }
 
-.char-counter.danger {
-    color: var(--danger);
-}
-
-/* Form input focus with label animation */
-.form-label.filled {
-    transform: translateY(-0.5rem);
-    font-size: 0.75rem;
-    color: var(--primary);
-}
-
-.form-group {
-    position: relative;
-}
+/* ========== FORM STYLES - Clean & Professional ========== */
 
 /* Character Counter */
 .char-counter {
@@ -1286,6 +1273,10 @@
     font-weight: 600;
 }
 
+.char-counter .char-separator {
+    margin: 0 0.25rem;
+}
+
 .char-counter.warning {
     color: var(--warning);
 }
@@ -1294,33 +1285,122 @@
     color: var(--danger);
 }
 
-.char-separator {
-    margin: 0 0.25rem;
+/* Form Group - Clean layout without floating labels */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-label {
-    position: absolute;
-    top: 0.875rem;
-    left: 1rem;
-    padding: 0 0.5rem;
-    background: var(--bg-dark);
-    transition: all var(--transition);
-    pointer-events: none;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
 }
 
 .form-input,
 .form-select,
 .form-textarea {
-    padding-top: 1.5rem;
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.9375rem;
+    transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.form-input:focus + .form-label,
-.form-select:focus + .form-label,
-.form-textarea:focus + .form-label,
-.form-input.filled + .form-label,
-.form-select.filled + .form-label,
-.form-textarea.filled + .form-label {
-    transform: translateY(-0.5rem);
+/* Light mode support for form inputs */
+.light-mode .form-input,
+.light-mode .form-select,
+.light-mode .form-textarea {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: var(--text-dark);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(0, 229, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.15);
+}
+
+.light-mode .form-input:focus,
+.light-mode .form-select:focus,
+.light-mode .form-textarea:focus {
+    background: rgba(0, 229, 255, 0.12);
+    box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.25);
+}
+
+.form-input::placeholder {
+    color: var(--text-muted);
+}
+
+.light-mode .form-input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23c0c0d8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.light-mode .form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333333' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-actions {
+    margin-top: 1rem;
+}
+
+/* Error states */
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+    border-color: var(--danger) !important;
+    background: rgba(255, 95, 87, 0.08) !important;
+    box-shadow: 0 0 0 3px rgba(255, 95, 87, 0.2) !important;
+}
+
+.form-input:focus.error,
+.form-select:focus.error,
+.form-textarea:focus.error {
+    border-color: var(--danger) !important;
+    background: rgba(255, 95, 87, 0.15) !important;
+    box-shadow: 0 0 0 3px rgba(255, 95, 87, 0.3) !important;
+}
+
+.form-error {
+    color: var(--danger);
     font-size: 0.75rem;
-    color: var(--primary);
+    margin-top: 0.25rem;
+    display: block;
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-3px); }
+    40%, 80% { transform: translateX(3px); }
 }

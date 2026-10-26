@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initFormValidation();
     initInputMasks();
-    initFormFieldEffects();
+    // initFormFieldEffects disabled - using static labels now
 });
 
 // ========== CONTACT FORM ==========
@@ -308,6 +308,10 @@ function initInputMasks() {
 }
 
 // ========== FORM FIELD EFFECTS ==========
+// Note: Floating label effect disabled. Using static labels above inputs
+// for better readability and to prevent text overlap in light/dark modes.
+// Function kept but not called for potential future use.
+/*
 function initFormFieldEffects() {
     const formGroups = document.querySelectorAll('.form-group');
     
@@ -316,12 +320,10 @@ function initFormFieldEffects() {
         const label = group.querySelector('.form-label');
         
         if (input && label) {
-            // Check if input has value on page load
             if (input.value) {
                 label.classList.add('filled');
             }
             
-            // Add/remove filled class on input
             input.addEventListener('input', function() {
                 if (this.value) {
                     label.classList.add('filled');
@@ -330,7 +332,6 @@ function initFormFieldEffects() {
                 }
             });
             
-            // Also handle change for select elements
             if (input.tagName === 'SELECT') {
                 input.addEventListener('change', function() {
                     if (this.value) {
@@ -343,6 +344,7 @@ function initFormFieldEffects() {
         }
     });
 }
+*/
 
 // ========== FORM SUBMISSION WITH AJAX ==========
 /**
