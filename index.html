@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="assets/css/components.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="assets/images/logos/sbmtech-logo-simple.svg">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -47,7 +47,14 @@
         <div class="container">
             <nav class="navbar">
                 <a href="#home" class="logo">
-                    <span class="logo-icon"><i class="fas fa-code"></i></span>
+                    <span class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 15 L35 15 L35 35 L15 35 Z" fill="var(--primary)"/>
+                            <path d="M20 20 L30 20" stroke="#fff" stroke-width="2"/>
+                            <path d="M20 25 L30 25" stroke="#fff" stroke-width="2"/>
+                            <path d="M20 30 L30 30" stroke="#fff" stroke-width="2"/>
+                        </svg>
+                    </span>
                     <span class="logo-text">SBM<span class="accent">TECH</span></span>
                 </a>
                 
@@ -100,6 +107,9 @@
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">
                         <i class="fas fa-folder-open"></i> Ver Proyectos
+                    </a>
+                    <a href="https://docx2pdf-jet.vercel.app/" target="_blank" class="btn btn-ghost">
+                        <i class="fas fa-file-pdf"></i> docx2pdf
                     </a>
                     <a href="#contact" class="btn btn-ghost">
                         <i class="fas fa-calendar-alt"></i> Agendar Reunión
@@ -353,7 +363,34 @@
                     </div>
                 </div>
                 
-                <!-- Project 4 - Arduino Incubator -->
+                <!-- Project 4 - docx2pdf -->
+                <div class="project-card glass-card reveal" data-category="web">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="docx2pdf - Conversor a PDF" loading="lazy">
+                        <div class="project-badge">Herramienta Web</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">docx2pdf</h3>
+                        <p class="project-description">
+                            Aplicación estilo ILovePDF para convertir archivos y carpetas a PDF. 
+                            Soporta PNG, JPG, WEBP, GIF, BMP, TXT, MD, LOG, CSV, TSV, XLS, XLSX, DOCX, PPTX. 
+                            Conversión local sin servidores.
+                        </p>
+                        <div class="project-meta">
+                            <div class="tech-tags">
+                                <span class="tech-tag"><i class="fas fa-globe"></i> Web</span>
+                                <span class="tech-tag"><i class="fas fa-file-pdf"></i> PDF</span>
+                                <span class="tech-tag"><i class="fas fa-code"></i> jsPDF</span>
+                                <span class="tech-tag"><i class="fas fa-code"></i> SheetJS</span>
+                            </div>
+                        </div>
+                        <a href="https://docx2pdf-jet.vercel.app/" target="_blank" class="project-link">
+                            Usar Ahora <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 5 - Arduino Incubator -->
                 <div class="project-card glass-card reveal" data-category="iot">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=400&h=250&fit=crop" alt="Incubadora Automatizada con Arduino" loading="lazy">
@@ -728,6 +765,13 @@
                         <li><a href="#projects">Proyectos</a></li>
                         <li><a href="#about">Sobre Nosotros</a></li>
                         <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Nuestras Apps</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://docx2pdf-jet.vercel.app/" target="_blank"><i class="fas fa-file-pdf"></i> docx2pdf</a></li>
                     </ul>
                 </div>
                 
